@@ -1,0 +1,9 @@
+{
+  "name": "St. Petrus Koptisch-Orthodoxe Kirche Hamburg",
+  "short_name": "St. Petrus Hamburg",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fbf7ed",
+  "theme_color": "#092e61",
+  "lang": "de"
+}

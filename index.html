@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b2f63">
+  <meta name="description" content="St. Petrus Koptisch-Orthodoxe Kirche Hamburg – V1 App Design Prototype">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+  <title>St. Petrus Hamburg — App V1</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="cross-mark">✣</div>
+        <div>
+          <div class="brand-name">St. Petrus</div>
+          <div class="brand-sub">Koptisch-Orthodoxe Kirche Hamburg</div>
+        </div>
+      </div>
+      <div class="top-actions">
+        <button class="icon-btn" aria-label="Benachrichtigungen">♧<span class="dot"></span></button>
+        <button class="icon-btn" aria-label="Profil" onclick="go('profile')">●</button>
+      </div>
+    </header>
+
+    <main id="screen"></main>
+
+    <nav class="bottom-nav" aria-label="Hauptnavigation">
+      <button data-route="home" onclick="go('home')"><span>⌂</span><small data-de="Home" data-ar="الرئيسية">Home</small></button>
+      <button data-route="church" onclick="go('church')"><span>♜</span><small data-de="Kirche" data-ar="الكنيسة">Kirche</small></button>
+      <button data-route="spiritual" onclick="go('spiritual')"><span>▣</span><small data-de="Spiritualität" data-ar="روحي">Spiritualität</small></button>
+      <button data-route="community" onclick="go('community')"><span>♧</span><small data-de="Community" data-ar="المجتمع">Community</small></button>
+      <button data-route="profile" onclick="go('profile')"><span>●</span><small data-de="Profil" data-ar="حسابي">Profil</small></button>
+    </nav>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
