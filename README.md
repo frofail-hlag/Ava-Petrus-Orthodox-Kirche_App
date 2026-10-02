@@ -1,37 +1,39 @@
-# St. Petrus Hamburg — App V1 Design Prototype
+# St. Petrus Hamburg — App V1.1 Design Prototype
 
-A static, mobile-first PWA-style design prototype for the Coptic Orthodox Church Hamburg.
+A static, mobile-first PWA-style visual prototype for the Coptic Orthodox Church Hamburg.
 
-## What this is
+## V1.1 changes
 
-- **Design prototype only** — no backend, authentication, database, CMS, Bible content, or live church data.
-- German + Arabic UI toggle.
-- Main church app architecture: Home, Church, Spiritualität, Community, Profile.
-- Sunday School is intentionally presented as a **separate app**, with a visual entry point and the three supplied class images.
-- No external JavaScript/CSS dependencies, so it is easy to deploy to GitHub Pages.
+- Reworked the UI to more closely match the visual concept:
+  - blue/gold Coptic visual language
+  - large visual hero
+  - card-based dashboard
+  - quick-action grid
+  - horizontally scrollable Sunday School cards
+  - more depth, shadows, rounded surfaces and visual hierarchy
+- Sunday School groups are now **clickable**.
+- Each class opens its own preview screen.
+- Sunday School remains a **separate-app concept**.
+- Replaced the plain "S" app icon with a **Coptic cross** icon.
+- Arabic/German language switching remains available, including RTL layout.
+- Added a local church-style SVG hero so the prototype has a richer visual background without external dependencies.
 
-## Run locally
+## Important
 
-Open `index.html` in a browser, or serve the folder with any static web server.
+This is still a **design prototype**:
+- no backend
+- no login
+- no database
+- no real church data
+- no production Bible/Agpeya/Synaxar content
+- no real community messaging
+
+The liturgy time shown in the prototype is only a visual placeholder.
 
 ## GitHub Pages
 
-This project is already structured for the same simple GitHub Pages approach used for the Money Plan PWA:
+Upload the contents of this folder to the root of a GitHub repository, then enable:
 
-1. Create a repository.
-2. Upload the contents of this folder to the repository root.
-3. Use `main` as the branch.
-4. GitHub Pages: **Deploy from a branch → main → / (root)**.
-5. Open the generated Pages URL.
+**Settings → Pages → Deploy from branch → main → / (root)**
 
-## Next iteration
-
-After team feedback, the next version should refine:
-- exact church logo/branding
-- colors and typography
-- navigation labels
-- Home dashboard priorities
-- Arabic RTL details
-- Sunday School app hand-off
-- actual church content
-- content/admin architecture
+No build step is required.

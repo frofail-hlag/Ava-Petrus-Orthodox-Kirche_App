@@ -1,102 +1,62 @@
-const state = { lang: localStorage.getItem("coptic-lang") || "de", route: location.hash.replace("#","") || "home" };
-
-const data = {
-  de: {
-    welcome:"Herzlich willkommen", sub:"Schön, dass Sie da sind!",
-    next:"Nächste Liturgie", sun:"Sonntag, 08:00",
-    church:"Kirche", spiritual:"Spiritualität", community:"Community", sunday:"Sonntagsschule",
-    notice:"Aktuelle Hinweise", noticeText:"Platzhalter für wichtige Nachrichten der Kirche.",
-    churchSub:"Alles rund um unsere Kirche", spiritualSub:"Dein täglicher geistlicher Weg",
-    communitySub:"Verbinden, helfen und ankommen", profile:"Profil & Einstellungen",
-    churchItems:[["▦","Liturgien","Termine & Gottesdienste"],["▣","Veranstaltungen","Gemeinschaft & Termine"],["ⓘ","Die Kirche","Informationen & Kontakt"],["♜","Unsere Priester","Geistliche Begleitung"],["⌖","Kontakt & Anfahrt","Adresse & Wegbeschreibung"]],
-    spiritualItems:[["▤","Bibel","Lesen & entdecken"],["✓","Ein-Jahres-Leseplan","Dein täglicher Bibelweg"],["♢","Agpeya","Gebete in Deutsch & Arabisch"],["✚","Koptischer Kalender","Synaxar & Heilige"],["▶","Videos","Lernen & Meditation"]],
-    communityItems:[["⌂","Wohnen","Hilfe & Angebote"],["▣","Jobs","Hilfe & Angebote"],["🎓","Bildung","Hilfe & Angebote"],["♧","Allgemeine Hilfe","Gemeinschaft"],["♥","Neu in Hamburg?","Ankommen & verbinden"]],
-    sundayDesc:"Eigene App für Kinder, Jugendliche, Eltern und Servants.",
-    classesTitle:"Sonntagsschule — Design Preview",
-    class1:"Malayka / Angels", class2:"Ava Kerelos", class3:"Abouna Faltaous",
-    ages:["6–8 Jahre","9–14 Jahre","15–20 Jahre"],
-    profileSub:"Sprache, Benachrichtigungen & Konto",
-    lang:"Sprache", notifications:"Benachrichtigungen", design:"V1 Design Prototype"
-  },
-  ar: {
-    welcome:"أهلاً وسهلاً بك", sub:"سعداء بوجودك معنا!",
-    next:"القداس القادم", sun:"الأحد، 08:00",
-    church:"الكنيسة", spiritual:"الحياة الروحية", community:"المجتمع", sunday:"مدرسة الأحد",
-    notice:"أهم الإعلانات", noticeText:"مكان مخصص لأهم أخبار وإعلانات الكنيسة.",
-    churchSub:"كل ما يخص كنيستنا", spiritualSub:"حياتك الروحية اليومية",
-    communitySub:"نتواصل ونساعد بعضنا البعض", profile:"الحساب والإعدادات",
-    churchItems:[["▦","القداسات","المواعيد والصلوات"],["▣","الفعاليات","الأنشطة والمناسبات"],["ⓘ","الكنيسة","معلومات وتواصل"],["♜","الآباء الكهنة","الإرشاد الروحي"],["⌖","التواصل والوصول","العنوان والطريق"]],
-    spiritualItems:[["▤","الكتاب المقدس","قراءة واكتشاف"],["✓","خطة قراءة سنة","رحلتك اليومية مع الكتاب"],["♢","الأجبية","صلوات بالعربية والألمانية"],["✚","السنكسار","القديسون والشهداء"],["▶","الفيديوهات","تعليم وتأمل"]],
-    communityItems:[["⌂","السكن","مساعدة وعروض"],["▣","الوظائف","مساعدة وفرص"],["🎓","التعليم","مساعدة وفرص"],["♧","مساعدة عامة","معاً نخدم بعضنا"],["♥","جديد في هامبورج؟","تعرف على المجتمع"]],
-    sundayDesc:"تطبيق مستقل للأطفال والشباب والأهالي والخدام.",
-    classesTitle:"مدرسة الأحد — معاينة التصميم",
-    class1:"ملايكة / Angels", class2:"البابا كيرلس", class3:"أبونا فلتاؤس",
-    ages:["٦–٨ سنوات","٩–١٤ سنة","١٥–٢٠ سنة"],
-    profileSub:"اللغة والإشعارات والحساب",
-    lang:"اللغة", notifications:"الإشعارات", design:"معاينة التصميم V1"
-  }
-};
-
-function t(k){return data[state.lang][k] ?? k}
-function setLang(lang){
-  state.lang=lang; localStorage.setItem("coptic-lang",lang);
-  document.documentElement.lang=lang;
-  document.body.classList.toggle("arabic",lang==="ar");
-  render();
-}
-function go(route){state.route=route; location.hash=route; render(); window.scrollTo({top:0,behavior:"smooth"})}
-
-function headerBack(){
-  return `<button class="back" onclick="go('home')">‹ ${state.lang==="ar"?"الرئيسية":"Home"}</button>`;
-}
-function list(items){
-  return `<div class="list">${items.map(x=>`<div class="list-card"><div class="list-icon">${x[0]}</div><div class="list-copy"><strong>${x[1]}</strong><span>${x[2]}</span></div><div class="chev">›</div></div>`).join("")}</div>`;
-}
+const state={lang:localStorage.getItem("coptic-lang")||"de",route:location.hash.replace("#","")||"home"};
+const D={
+de:{
+welcome:"Herzlich willkommen",sub:"Schön, dass Sie da sind!",next:"Nächste Liturgie",sun:"Sonntag, 10:00",
+church:"Kirche",spiritual:"Spiritualität",community:"Community",sunday:"Sonntagsschule",discover:"Entdecken",
+notice:"Aktuelle Hinweise",noticeText:"Platzhalter für wichtige Nachrichten der Kirche.",
+churchSub:"Gottesdienste, Termine und unsere Kirche",spiritualSub:"Dein täglicher geistlicher Weg",communitySub:"Verbinden, helfen und ankommen",
+classTitle:"Sonntagsschule",classSub:"Separate App",open:"Sonntagsschule App öffnen",profile:"Profil & Einstellungen",
+classes:[["Malayka / Angels","Gruppe 1","6–8 Jahre","assets/malayka.jpeg"],["Ava Kerelos","Gruppe 2","9–14 Jahre","assets/ava-kerelos.jpeg"],["Abouna Faltaous","Gruppe 3","15–20 Jahre","assets/abouna-faltaous.jpeg"]],
+churchCards:[["▦","Liturgien","Termine & Gottesdienste"],["▣","Veranstaltungen","Gemeinschaft & Termine"],["ⓘ","Die Kirche","Informationen & Kontakt"],["♜","Unsere Priester","Geistliche Begleitung"],["⌖","Kontakt & Anfahrt","Adresse & Wegbeschreibung"],["✣","Coptic Calendar","Synaxar & Feiertage"]],
+spiritualCards:[["▤","Bibel","Lesen & entdecken"],["✓","Ein-Jahres-Leseplan","Dein täglicher Bibelweg"],["♢","Agpeya","Deutsch & Arabisch"],["✚","Koptischer Kalender","Synaxar & Heilige"],["▶","Videos","Lernen & Meditation"],["♡","Meine Favoriten","Gespeicherte Inhalte"]],
+communityCards:[["⌂","Wohnen","Hilfe & Angebote"],["▣","Jobs","Hilfe & Angebote"],["🎓","Bildung","Hilfe & Angebote"],["♧","Allgemeine Hilfe","Gemeinschaft"],["♥","Neu in Hamburg?","Ankommen & verbinden"],["☼","Veranstaltungen","Menschen treffen"]],
+profileSub:"Sprache, Benachrichtigungen & Konto"
+},
+ar:{
+welcome:"أهلاً وسهلاً بك",sub:"سعداء بوجودك معنا!",next:"القداس القادم",sun:"الأحد، 10:00",
+church:"الكنيسة",spiritual:"الحياة الروحية",community:"المجتمع",sunday:"مدرسة الأحد",discover:"اكتشف",
+notice:"أهم الإعلانات",noticeText:"مكان مخصص لأهم أخبار وإعلانات الكنيسة.",
+churchSub:"القداسات والفعاليات والكنيسة",spiritualSub:"حياتك الروحية اليومية",communitySub:"نتواصل ونساعد بعضنا البعض",
+classTitle:"مدرسة الأحد",classSub:"تطبيق مستقل",open:"فتح تطبيق مدرسة الأحد",profile:"الحساب والإعدادات",
+classes:[["ملايكة / Angels","المجموعة ١","٦–٨ سنوات","assets/malayka.jpeg"],["أفا كيرلس","المجموعة ٢","٩–١٤ سنة","assets/ava-kerelos.jpeg"],["أبونا فلتاؤس","المجموعة ٣","١٥–٢٠ سنة","assets/abouna-faltaous.jpeg"]],
+churchCards:[["▦","القداسات","المواعيد والصلوات"],["▣","الفعاليات","الأنشطة والمناسبات"],["ⓘ","الكنيسة","معلومات وتواصل"],["♜","الآباء الكهنة","الإرشاد الروحي"],["⌖","التواصل والوصول","العنوان والطريق"],["✣","السنكسار","القديسون والأعياد"]],
+spiritualCards:[["▤","الكتاب المقدس","قراءة واكتشاف"],["✓","خطة قراءة سنة","رحلتك اليومية مع الكتاب"],["♢","الأجبية","بالعربية والألمانية"],["✚","السنكسار","القديسون والشهداء"],["▶","الفيديوهات","تعليم وتأمل"],["♡","المفضلة","المحتوى المحفوظ"]],
+communityCards:[["⌂","السكن","مساعدة وعروض"],["▣","الوظائف","مساعدة وفرص"],["🎓","التعليم","مساعدة وفرص"],["♧","مساعدة عامة","معاً نخدم بعضنا"],["♥","جديد في هامبورج؟","تعرف على المجتمع"],["☼","الفعاليات","نتعرف على بعضنا"]],
+profileSub:"اللغة والإشعارات والحساب"
+}};
+function t(k){return D[state.lang][k]??k}
+function setLang(x){state.lang=x;localStorage.setItem("coptic-lang",x);render()}
+function go(x){state.route=x;location.hash=x;render();window.scrollTo({top:0,behavior:"smooth"})}
+function quick(icon,title,sub,route,cls){return `<button class="quick ${cls}" onclick="go('${route}')"><div class="quick-icon">${icon}</div><strong>${title}</strong></button>`}
+function featureCards(items){return `<div class="card-grid">${items.map((x,i)=>`<button class="feature-card" onclick="placeholder('${x[1]}')"><div class="ficon">${x[0]}</div><strong>${x[1]}</strong><span>${x[2]}</span></button>`).join("")}</div>`}
 function home(){
-  return `
-  <div class="hero">
-    <div class="eyebrow">St. Petrus • Hamburg</div>
-    <h1>${t("welcome")}</h1><p>${t("sub")}</p>
-    <div class="hero-row">
-      <span class="pill">✣ &nbsp; Koptisch-Orthodox</span>
-      <div class="lang-toggle"><button class="${state.lang==="de"?"active":""}" onclick="setLang('de')">DE</button><button class="${state.lang==="ar"?"active":""}" onclick="setLang('ar')">عربي</button></div>
-    </div>
-  </div>
-  <div class="section-title"><h2>${t("next")}</h2><span>${t("sun")}</span></div>
-  <div class="next-card"><div class="next-icon">♜</div><div class="next-info"><div class="next-label">${t("next")}</div><div class="next-title">${t("sun")}</div><div class="next-time">St. Petrus • Hamburg</div></div><div class="chev">›</div></div>
-
-  <div class="section-title"><h2>${state.lang==="ar"?"اكتشف":"Entdecken"}</h2></div>
-  <div class="grid">
-    <button class="tile blue" onclick="go('church')"><div class="tile-icon">⛪</div><strong>${t("church")}</strong><small>${t("churchSub")}</small></button>
-    <button class="tile blue" onclick="go('spiritual')"><div class="tile-icon">📖</div><strong>${t("spiritual")}</strong><small>${t("spiritualSub")}</small></button>
-    <button class="tile green" onclick="go('community')"><div class="tile-icon">👥</div><strong>${t("community")}</strong><small>${t("communitySub")}</small></button>
-    <button class="tile rose" onclick="openSundaySchool()"><div class="tile-icon">🎓</div><strong>${t("sunday")}</strong><small>${t("sundayDesc")}</small></button>
+  const c=t("classes");
+  return `<section class="hero"><div class="hero-content"><div class="eyebrow">St. Petrus • Hamburg</div><h1>${t("welcome")}</h1><p>${t("sub")}</p><div class="hero-row"><span class="pill">✣ &nbsp; Koptisch-Orthodox</span><div class="lang-toggle"><button class="${state.lang==="de"?"active":""}" onclick="setLang('de')">DE</button><button class="${state.lang==="ar"?"active":""}" onclick="setLang('ar')">عربي</button></div></div></div></section>
+  <div class="section-head"><h2>${t("next")}</h2><span>${t("sun")}</span></div>
+  <div class="liturgy"><div class="liturgy-icon">♜</div><div class="liturgy-copy"><div class="label">${t("next")}</div><strong>${t("sun")}</strong><span>St. Petrus • Hamburg</span></div><div class="chev">›</div></div>
+  <div class="section-head"><h2>${t("discover")}</h2></div>
+  <div class="quick-grid">
+    ${quick("⛪",t("church"),"", "church","q-blue")}
+    ${quick("📖",t("spiritual"),"","spiritual","q-blue")}
+    ${quick("👥",t("community"),"","community","q-green")}
+    ${quick("🎓",t("sunday"),"","sunday","q-rose")}
   </div>
   <div class="notice"><div class="notice-icon">📢</div><p><b>${t("notice")}:</b> ${t("noticeText")}</p></div>
-  <div class="ss-panel">
-    <div class="section-title"><h2>${t("classesTitle")}</h2></div>
-    <div class="class-grid">
-      <div class="class-card"><img class="class-img" src="assets/malayka.jpeg"><div><h3>${t("class1")}</h3><p>Gruppe 1</p><span class="age">${t("ages")[0]}</span></div></div>
-      <div class="class-card"><img class="class-img" src="assets/ava-kerelos.jpeg"><div><h3>${t("class2")}</h3><p>Gruppe 2</p><span class="age">${t("ages")[1]}</span></div></div>
-      <div class="class-card"><img class="class-img" src="assets/abouna-faltaous.jpeg"><div><h3>${t("class3")}</h3><p>Gruppe 3</p><span class="age">${t("ages")[2]}</span></div></div>
-    </div>
-  </div>`;
+  <div class="ss-strip"><div class="ss-head"><div><h2>${t("classTitle")}</h2><span>${t("classSub")}</span></div><span>›</span></div><div class="class-scroll">${c.map((x,i)=>`<button class="class-card" onclick="go('class${i}')"><img class="class-img" src="${x[3]}" alt="${x[0]}"><h3>${x[0]}</h3><p>${x[1]}</p><span class="age">${x[2]}</span></button>`).join("")}</div></div>`;
 }
 function page(route){
-  if(route==="church") return `<button class="back" onclick="go('home')">‹ ${state.lang==="ar"?"الرئيسية":"Home"}</button><h1 class="page-title">${t("church")}</h1><p class="page-sub">${t("churchSub")}</p>${list(data[state.lang].churchItems)}`;
-  if(route==="spiritual") return `<button class="back" onclick="go('home')">‹ ${state.lang==="ar"?"الرئيسية":"Home"}</button><div class="feature"><h2>${t("spiritual")}</h2><p>${t("spiritualSub")}</p><div class="feature-row"><span>📖 Bible</span><span>📿 Agpeya</span><span>✝ Synaxar</span></div></div>${list(data[state.lang].spiritualItems)}`;
-  if(route==="community") return `<button class="back" onclick="go('home')">‹ ${state.lang==="ar"?"الرئيسية":"Home"}</button><h1 class="page-title">${t("community")}</h1><p class="page-sub">${t("communitySub")}</p>${list(data[state.lang].communityItems)}`;
-  if(route==="profile") return `<button class="back" onclick="go('home')">‹ ${state.lang==="ar"?"الرئيسية":"Home"}</button><h1 class="page-title">${t("profile")}</h1><div class="profile-card"><div class="avatar">✣</div><div><h3>St. Petrus Hamburg</h3><p>${t("design")}</p></div></div><div class="section-title"><h2>${t("lang")}</h2></div><div class="lang-toggle"><button class="${state.lang==="de"?"active":""}" onclick="setLang('de')">Deutsch</button><button class="${state.lang==="ar"?"active":""}" onclick="setLang('ar')">العربية</button></div><div class="section-title"><h2>${t("notifications")}</h2></div><div class="list"><div class="list-card"><div class="list-icon">🔔</div><div class="list-copy"><strong>${t("notifications")}</strong><span>Design placeholder</span></div><div class="chev">›</div></div></div>`;
-  return home();
+ if(route==="church")return `<section class="page-hero"><button class="back" onclick="go('home')">‹ ${state.lang==="ar"?"الرئيسية":"Home"}</button><h1>${t("church")}</h1><p>${t("churchSub")}</p></section>${featureCards(t("churchCards"))}`;
+ if(route==="spiritual")return `<section class="page-hero"><button class="back" onclick="go('home')">‹ ${state.lang==="ar"?"الرئيسية":"Home"}</button><h1>${t("spiritual")}</h1><p>${t("spiritualSub")}</p></section>${featureCards(t("spiritualCards"))}`;
+ if(route==="community")return `<section class="community-hero"><div class="eyebrow">St. Petrus • Hamburg</div><h1>${t("community")}</h1><p>${t("communitySub")}</p></section><div class="community-grid">${t("communityCards").map(x=>`<button class="community-item" onclick="placeholder('${x[1]}')"><div class="ci">${x[0]}</div><strong>${x[1]}</strong><span>${x[2]}</span></button>`).join("")}</div>`;
+ if(route==="profile")return `<section class="page-hero"><button class="back" onclick="go('home')">‹ ${state.lang==="ar"?"الرئيسية":"Home"}</button><h1>${t("profile")}</h1><p>${t("profileSub")}</p></section><div class="profile-card" style="margin-top:13px"><div class="avatar">✣</div><div><h3>St. Petrus Hamburg</h3><p>${state.lang==="ar"?"نسخة تصميم تجريبية":"V1 Design Prototype"}</p></div></div><div class="section-head"><h2>${state.lang==="ar"?"اللغة":"Sprache"}</h2></div><div class="lang-toggle" style="background:#fff;border:1px solid var(--line)"><button style="color:var(--navy)" class="${state.lang==="de"?"active":""}" onclick="setLang('de')">Deutsch</button><button style="color:var(--navy)" class="${state.lang==="ar"?"active":""}" onclick="setLang('ar')">العربية</button></div>`;
+ if(route.startsWith("class"))return classPage(parseInt(route.replace("class",""),10)||0);
+ if(route==="sunday")return `<section class="ss-page"><div class="ss-banner"><button class="back" onclick="go('home')">‹ ${state.lang==="ar"?"الرئيسية":"Home"}</button><h1>${t("classTitle")}</h1><p>${t("classSub")} — ${t("open")}</p></div><div class="section-head"><h2>${state.lang==="ar"?"اختر المجموعة":"Gruppe auswählen"}</h2></div><div class="card-grid">${t("classes").map((x,i)=>`<button class="feature-card" onclick="go('class${i}')"><img class="class-img" src="${x[3]}" alt="${x[0]}"><h3 style="font-family:Georgia,serif;color:var(--navy);margin:9px 0 2px">${x[0]}</h3><span>${x[2]}</span></button>`).join("")}</div></section>`;
+ return home();
 }
-function render(){
-  document.body.classList.toggle("arabic",state.lang==="ar");
-  document.documentElement.lang=state.lang;
-  document.getElementById("screen").innerHTML=page(state.route);
-  document.querySelectorAll(".bottom-nav button").forEach(b=>b.classList.toggle("active",b.dataset.route===state.route));
+function classPage(i){
+ const x=t("classes")[i];
+ return `<section class="ss-page"><div class="ss-banner"><button class="back" onclick="go('home')">‹ ${state.lang==="ar"?"الرئيسية":"Home"}</button><h1>${x[0]}</h1><p>${x[1]} • ${x[2]}</p></div><div class="ss-detail"><img src="${x[3]}" alt="${x[0]}"><div class="ss-detail-body"><h2>${x[0]}</h2><p>${state.lang==="ar"?"معاينة لتطبيق مدرسة الأحد المستقل لهذه المجموعة.":"Vorschau für die separate Sonntagsschule-App dieser Gruppe."}</p><div class="tag-row"><span class="tag">📚 ${state.lang==="ar"?"الدروس":"Lessons"}</span><span class="tag">📖 ${state.lang==="ar"?"القراءة":"Reading"}</span><span class="tag">🎥 ${state.lang==="ar"?"فيديو":"Videos"}</span><span class="tag">🔔 ${state.lang==="ar"?"الإشعارات":"Notifications"}</span></div><button class="launch" onclick="placeholder('${x[0]}')">${t("open")}</button></div></div></section>`;
 }
-function openSundaySchool(){
-  alert(state.lang==="ar" ? "مدرسة الأحد ستكون تطبيقاً مستقلاً — هذه نقطة الدخول في تطبيق الكنيسة." : "Sonntagsschule wird eine eigene App — dies ist der Einstieg aus der Kirchen-App.");
-}
-window.addEventListener("hashchange",()=>{state.route=location.hash.replace("#","")||"home";render()});
-render();
+function placeholder(name){alert((state.lang==="ar"?"هذه معاينة تصميمية فقط: ":"Design-Prototyp: ") + name)}
+function render(){document.body.classList.toggle("arabic",state.lang==="ar");document.documentElement.lang=state.lang;document.getElementById("screen").innerHTML=page(state.route);document.querySelectorAll(".bottom-nav button").forEach(b=>b.classList.toggle("active",b.dataset.route===state.route))}
+window.addEventListener("hashchange",()=>{state.route=location.hash.replace("#","")||"home";render()});render();

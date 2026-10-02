@@ -3,7 +3,15 @@
   "short_name": "St. Petrus Hamburg",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#fbf7ed",
-  "theme_color": "#092e61",
-  "lang": "de"
+  "background_color": "#f7f4ed",
+  "theme_color": "#082b59",
+  "lang": "de",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
 }
