@@ -1,8 +1,8 @@
-# St. Petrus Koptisch-Orthodoxe Kirche Hamburg — App V1.3
+# St. Petrus Koptisch-Orthodoxe Kirche Hamburg — App V1.3.1
 
 Design + Information Architecture prototype for the bilingual church app.
 
-## V1.3 focus
+## V1.3.1 focus
 - Main navigation: **Home | Kirche | Spiritual | Medien | Community**
 - Profile/settings moved to the top-right so the five primary tabs stay focused.
 - Church website information is mapped into natural app destinations instead of copied as website navigation.
@@ -21,11 +21,11 @@ Upload the contents of this folder to a repository and enable GitHub Pages from 
 This is not yet a production backend. Dates, liturgy schedules, media, contact workflows, accounts, notifications and community data are placeholders for the product/build phase.
 
 
-## V1.3.1 refinement
+## V1.3.1.1 refinement
 - Expanded the St. Petrus page using all factual themes from the current church website Petrus page.
 - Added functional Notifications and Profile header actions with clear icons.
 - Kept the main navigation: Home | Kirche | Spiritual | Medien | Community.
 
 
-## V1.3 visual update
+## V1.3.1 visual update
 The Home screen follows the approved warm premium visual direction: full-bleed church hero, overlapping next-liturgy card, four discovery tiles, navy Sunday School banner using the three real group images, announcements, and the five-tab navigation. The warm hero image is a generated design placeholder and should be replaced with a church-owned/licensed Hamburg church photo before production.

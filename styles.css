@@ -46,9 +46,9 @@ body{background:#e7ecf2}
 .route-home .cross-mark{background:rgba(8,43,89,.72);border:1px solid rgba(255,255,255,.18);box-shadow:0 8px 24px rgba(0,0,0,.16)}
 .route-home .icon-btn{background:rgba(13,38,69,.42);color:#fff;border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(12px)}
 .route-home main{padding:0 0 30px}
-.home-hero{height:445px;position:relative;overflow:hidden;background-image:linear-gradient(180deg,rgba(5,24,49,.26) 0%,rgba(5,24,49,.08) 36%,rgba(5,24,49,.74) 100%),url("assets/church-hero-warm.png");background-size:cover;background-position:center 48%;color:#fff}
+.home-hero{height:415px;position:relative;overflow:hidden;background-image:linear-gradient(180deg,rgba(5,24,49,.50) 0%,rgba(5,24,49,.10) 30%,rgba(5,24,49,.72) 100%),url("assets/church-hero-clean.jpg");background-size:cover;background-position:center 54%;color:#fff}
 .home-hero:after{content:"";position:absolute;inset:auto 0 0;height:150px;background:linear-gradient(transparent,rgba(247,244,237,.97));pointer-events:none}
-.hero-overlay{position:absolute;inset:0;display:flex;align-items:flex-end;padding:0 26px 72px;z-index:2}
+.hero-overlay{position:absolute;inset:0;display:flex;align-items:flex-end;padding:0 26px 64px;z-index:2}
 .hero-copy{max-width:320px;text-shadow:0 2px 8px rgba(0,0,0,.24)}
 .hero-copy .eyebrow{opacity:.9}.hero-copy h1{font-family:Georgia,serif;font-size:40px;line-height:.98;margin:9px 0 8px;letter-spacing:-.03em}.hero-copy p{font-size:15px;margin:0;opacity:.94}.hero-copy .hero-row{margin-top:22px}
 .hero-copy .pill{background:rgba(13,37,65,.48);border-color:rgba(255,255,255,.3);font-size:11px;padding:9px 13px;backdrop-filter:blur(10px)}
@@ -68,3 +68,21 @@ body{background:#e7ecf2}
 .route-home .bottom-nav{box-shadow:0 -5px 25px rgba(8,43,89,.06)}
 @media(max-width:420px){.hero-copy h1{font-size:36px}.home-hero{height:425px}.ss-banner-home{padding:16px 11px}.ss-copy-home{min-width:118px}.ss-copy-home h2{font-size:21px}.ss-person img{width:56px;height:56px}.ss-person strong{font-size:8px}.ss-person em{font-size:6px}}
 @media(max-width:370px){.quick strong{font-size:13px}.quick span{font-size:8px}.ss-copy-home{min-width:105px}.ss-copy-home h2{font-size:19px}.ss-person img{width:49px;height:49px}}
+
+/* V1.3.1 — tighter home composition and cleaner hero */
+.route-home .app-shell{background:#f8f5ed}
+.route-home .topbar{height:82px}
+.route-home .brand{padding-top:2px}
+.route-home .home-hero{border-radius:0 0 34px 34px}
+.route-home .home-body{padding-bottom:92px}
+.home-today{margin-top:16px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:14px 13px;box-shadow:0 8px 22px rgba(8,43,89,.045)}
+.home-today-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.home-today-head h3{font-family:Georgia,serif;color:var(--navy);font-size:16px;margin:0}
+.home-today-head span{font-size:9px;color:#9b7315}
+.home-today-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.today-item{border:1px solid #e9edf1;background:#fafbfc;border-radius:16px;padding:11px;min-height:66px}
+.today-item b{display:block;color:var(--navy);font-size:10px}
+.today-item span{display:block;color:#718096;font-size:9px;line-height:1.3;margin-top:4px}
+.today-icon{float:left;width:31px;height:31px;border-radius:10px;background:#edf4ff;display:grid;place-items:center;margin-right:8px;font-size:15px}
+.arabic .home-today{text-align:right}.arabic .today-icon{float:right;margin-right:0;margin-left:8px}
+@media(max-width:420px){.home-hero{height:395px}.hero-copy h1{font-size:35px}.hero-overlay{padding-bottom:58px}.home-today-grid{grid-template-columns:1fr 1fr}}

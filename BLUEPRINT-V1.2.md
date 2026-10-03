@@ -1,4 +1,4 @@
-# St. Petrus Hamburg App — Product Blueprint V1.2
+# St. Petrus Hamburg App — Product Blueprint V1.3
 
 ## 1. Product architecture
 
@@ -59,7 +59,7 @@ Future candidates:
 - Personal spiritual journey
 
 ### Medien
-New primary section introduced in V1.2.
+New primary section introduced in V1.3.
 
 - Videos
 - Images
@@ -67,7 +67,7 @@ New primary section introduced in V1.2.
 - Learning content
 - Featured / recommended
 
-The current website's media page is sparse and contains older example events. Therefore V1.2 establishes the **product structure**, not a literal import of those legacy entries.
+The current website's media page is sparse and contains older example events. Therefore V1.3 establishes the **product structure**, not a literal import of those legacy entries.
 
 ### Community
 - Housing support
@@ -161,7 +161,7 @@ Brand, bilingual direction, core modules.
 ### V1.1 — Design prototype
 Faithful visual prototype, clickable Sunday School groups, app identity.
 
-### V1.2 — Information architecture + website integration
+### V1.3 — Information architecture + website integration
 **Current release.** Adds the five-tab navigation and maps the website's four main information areas into the app.
 
 ### V1.3 — Content model + real church content
@@ -178,7 +178,7 @@ Separate product design and data model, connected to the same platform/account l
 
 ---
 
-## 8. Product decisions locked in V1.2
+## 8. Product decisions locked in V1.3
 
 1. Sunday School is a separate app.
 2. Main app uses **Home | Kirche | Spiritual | Medien | Community**.
@@ -188,9 +188,9 @@ Separate product design and data model, connected to the same platform/account l
 6. Media becomes a first-class top-level section.
 7. Website content is adapted into app UX instead of copied page-for-page.
 8. German + Arabic are first-class languages; architecture remains English-ready.
-9. V1.2 is still a frontend prototype — no production claims about live schedules, accounts or backend data.
+9. V1.3 is still a frontend prototype — no production claims about live schedules, accounts or backend data.
 
-## V1.2.1 refinement — St. Petrus + header actions
+## V1.3.1 refinement — St. Petrus + header actions
 
 ### St. Petrus content
 The St. Petrus screen is expanded to cover the full set of factual themes currently presented on the church website's Petrus page: feast day, church dedication commemoration, Basilian Anaphora, name meaning, Alexandria/Baukalis, patriarchal succession, Diocletian persecution, the Meletian schism, Galerius' toleration edict, martyrdom under Maximinus Daia, writings, Eparthenos, associated martyrs, the later/legendary martyr acts, and the title "Siegel der Märtyrer". The page is bilingual (German/Arabic) and explicitly identifies the church website as the source.
@@ -201,3 +201,12 @@ The two top-right controls now have clear, functional meanings:
 - **Person:** Profile & Settings. It opens the language/profile screen. The previous placeholder dot has been replaced with a proper profile icon.
 
 This keeps the bottom navigation focused on the five core product areas: Home | Kirche | Spiritual | Medien | Community.
+
+
+## V1.3 Design Direction
+- Home is now a premium editorial-style dashboard matching the approved visual reference.
+- Full-bleed warm church hero with readable overlay, language switch, and functional notification/profile controls.
+- Next Liturgy card overlaps the hero/body transition.
+- Entdecken uses four rich cards: Kirche, Spiritualität, Medien, Community.
+- Sonntagsschule remains a separate app but is promoted through a dark navy banner with the three existing group images and direct group navigation.
+- Important production note: the current hero is an AI-generated visual placeholder; replace it with an approved church-owned/licensed photo of the actual Hamburg church before production.

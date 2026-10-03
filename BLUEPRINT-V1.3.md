@@ -210,3 +210,11 @@ This keeps the bottom navigation focused on the five core product areas: Home | 
 - Entdecken uses four rich cards: Kirche, Spiritualität, Medien, Community.
 - Sonntagsschule remains a separate app but is promoted through a dark navy banner with the three existing group images and direct group navigation.
 - Important production note: the current hero is an AI-generated visual placeholder; replace it with an approved church-owned/licensed photo of the actual Hamburg church before production.
+
+
+## V1.3.1 Design Refinements
+- Replaced the contaminated hero screenshot crop with a clean church-only image asset for the prototype.
+- Tightened the hero height and top overlay so branding remains legible without baked-in text or controls.
+- Added a compact “Heute in der Gemeinde” section to eliminate dead space and give the Home screen a useful daily layer.
+- Sunday School remains a visually prominent but separate app experience.
+- The current church image remains a prototype placeholder and should be replaced with a church-approved Hamburg photograph before production.
