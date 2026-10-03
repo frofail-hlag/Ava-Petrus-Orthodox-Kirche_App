@@ -189,3 +189,15 @@ Separate product design and data model, connected to the same platform/account l
 7. Website content is adapted into app UX instead of copied page-for-page.
 8. German + Arabic are first-class languages; architecture remains English-ready.
 9. V1.2 is still a frontend prototype — no production claims about live schedules, accounts or backend data.
+
+## V1.2.1 refinement — St. Petrus + header actions
+
+### St. Petrus content
+The St. Petrus screen is expanded to cover the full set of factual themes currently presented on the church website's Petrus page: feast day, church dedication commemoration, Basilian Anaphora, name meaning, Alexandria/Baukalis, patriarchal succession, Diocletian persecution, the Meletian schism, Galerius' toleration edict, martyrdom under Maximinus Daia, writings, Eparthenos, associated martyrs, the later/legendary martyr acts, and the title "Siegel der Märtyrer". The page is bilingual (German/Arabic) and explicitly identifies the church website as the source.
+
+### Header actions
+The two top-right controls now have clear, functional meanings:
+- **Bell:** Notifications. The red dot indicates unread/important notices in the prototype. It opens a dedicated notification screen.
+- **Person:** Profile & Settings. It opens the language/profile screen. The previous placeholder dot has been replaced with a proper profile icon.
+
+This keeps the bottom navigation focused on the five core product areas: Home | Kirche | Spiritual | Medien | Community.

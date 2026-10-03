@@ -19,3 +19,9 @@ Upload the contents of this folder to a repository and enable GitHub Pages from 
 
 ## Important
 This is not yet a production backend. Dates, liturgy schedules, media, contact workflows, accounts, notifications and community data are placeholders for the product/build phase.
+
+
+## V1.2.1 refinement
+- Expanded the St. Petrus page using all factual themes from the current church website Petrus page.
+- Added functional Notifications and Profile header actions with clear icons.
+- Kept the main navigation: Home | Kirche | Spiritual | Medien | Community.
