@@ -1,5 +1,5 @@
 {
-  "name": "St. Petrus Koptisch-Orthodoxe Kirche Hamburg",
+  "name": "St. Petrus Hamburg — Koptisch-Orthodoxe Kirche",
   "short_name": "St. Petrus Hamburg",
   "start_url": ".",
   "display": "standalone",
@@ -13,5 +13,6 @@
       "type": "image/svg+xml",
       "purpose": "any maskable"
     }
-  ]
+  ],
+  "description": "Bilingual church app prototype — V1.2"
 }
