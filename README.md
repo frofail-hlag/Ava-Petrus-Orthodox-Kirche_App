@@ -36,3 +36,7 @@ The Home screen follows the approved warm premium visual direction: full-bleed c
 - Clean church hero image used across Home and internal pages.
 - Responsive iPhone + iPad layout: tablet uses the full viewport with centered max-width content rather than a 520px phone shell.
 - Bottom navigation spans the full tablet width.
+
+
+## V1.3.3
+Final visual micro-fix: on iPad/tablet widths the bottom navigation now spans the full viewport and distributes all five navigation items evenly. iPhone behavior remains unchanged.

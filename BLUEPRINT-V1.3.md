@@ -228,3 +228,9 @@ This keeps the bottom navigation focused on the five core product areas: Home | 
 - Bottom navigation spans the full tablet viewport.
 - Home hero, content grids, Sunday School banner, and internal pages scale into the larger canvas without creating large side gutters.
 - This is the final visual pass before moving into content architecture, user roles, permissions, CMS/data model, and production workflows.
+
+
+### V1.3.3 — Final navigation responsiveness
+- iPhone bottom navigation preserved.
+- iPad/tablet bottom navigation is full-viewport, evenly distributed, and no longer constrained to the 520px phone-width shell.
+- This closes the current visual/responsive pass before product architecture work begins.

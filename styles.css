@@ -129,3 +129,18 @@ body{background:#e7ecf2}
 .today-icon{float:left;width:31px;height:31px;border-radius:10px;background:#edf4ff;display:grid;place-items:center;margin-right:8px;font-size:15px}
 .arabic .home-today{text-align:right}.arabic .today-icon{float:right;margin-right:0;margin-left:8px}
 @media(max-width:420px){.home-hero{height:395px}.hero-copy h1{font-size:35px}.hero-overlay{padding-bottom:58px}.home-today-grid{grid-template-columns:1fr 1fr}}
+
+/* V1.3.3 — iPad bottom navigation fix: full-viewport dock, evenly distributed */
+@media (min-width:700px){
+  .bottom-nav{
+    width:100vw;
+    max-width:none;
+    left:50vw;
+    transform:translateX(-50%);
+    grid-template-columns:repeat(5,minmax(110px,1fr));
+    padding-left:max(24px, env(safe-area-inset-left));
+    padding-right:max(24px, env(safe-area-inset-right));
+    box-sizing:border-box;
+  }
+  .bottom-nav button{min-width:0;max-width:180px;width:100%;justify-self:center;}
+}
