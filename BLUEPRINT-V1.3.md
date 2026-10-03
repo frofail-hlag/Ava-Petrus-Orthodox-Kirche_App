@@ -218,3 +218,13 @@ This keeps the bottom navigation focused on the five core product areas: Home | 
 - Added a compact “Heute in der Gemeinde” section to eliminate dead space and give the Home screen a useful daily layer.
 - Sunday School remains a visually prominent but separate app experience.
 - The current church image remains a prototype placeholder and should be replaced with a church-approved Hamburg photograph before production.
+
+
+## V1.3.2 Design Finalization
+- Use the cleaned church hero photo (`assets/church-hero-clean.jpg`) consistently for Home and internal page heroes.
+- Remove the legacy SVG church hero from all active UI routes.
+- Responsive layout target: iPhone portrait/landscape and iPad portrait/landscape.
+- On tablet widths (>=700px), the app uses the full available viewport instead of a fixed 520px phone shell, with centered content containers up to ~1180px.
+- Bottom navigation spans the full tablet viewport.
+- Home hero, content grids, Sunday School banner, and internal pages scale into the larger canvas without creating large side gutters.
+- This is the final visual pass before moving into content architecture, user roles, permissions, CMS/data model, and production workflows.

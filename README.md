@@ -29,3 +29,10 @@ This is not yet a production backend. Dates, liturgy schedules, media, contact w
 
 ## V1.3.1 visual update
 The Home screen follows the approved warm premium visual direction: full-bleed church hero, overlapping next-liturgy card, four discovery tiles, navy Sunday School banner using the three real group images, announcements, and the five-tab navigation. The warm hero image is a generated design placeholder and should be replaced with a church-owned/licensed Hamburg church photo before production.
+
+
+## V1.3.2
+- Final visual refinement pass before product/content architecture work.
+- Clean church hero image used across Home and internal pages.
+- Responsive iPhone + iPad layout: tablet uses the full viewport with centered max-width content rather than a 520px phone shell.
+- Bottom navigation spans the full tablet width.
