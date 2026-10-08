@@ -38,5 +38,11 @@ The Home screen follows the approved warm premium visual direction: full-bleed c
 - Bottom navigation spans the full tablet width.
 
 
-## V1.3.3
+## V1.3.4
 Final visual micro-fix: on iPad/tablet widths the bottom navigation now spans the full viewport and distributes all five navigation items evenly. iPhone behavior remains unchanged.
+
+
+## V1.3.4 — Malayka / Angels Logo Update
+- Replaced the Malayka / Angels Sunday School group image with the new supplied logo.
+- Preserved the existing Sunday School structure, navigation, responsive layout, and overall visual design.
+- Cleaned the supplied logo background for transparent use in the app.

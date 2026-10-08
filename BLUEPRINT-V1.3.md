@@ -230,7 +230,13 @@ This keeps the bottom navigation focused on the five core product areas: Home | 
 - This is the final visual pass before moving into content architecture, user roles, permissions, CMS/data model, and production workflows.
 
 
-### V1.3.3 — Final navigation responsiveness
+### V1.3.4 — Final navigation responsiveness
 - iPhone bottom navigation preserved.
 - iPad/tablet bottom navigation is full-viewport, evenly distributed, and no longer constrained to the 520px phone-width shell.
 - This closes the current visual/responsive pass before product architecture work begins.
+
+
+## V1.3.4 — Malayka / Angels Logo Update
+- Replaced the Malayka / Angels Sunday School group image with the new supplied logo.
+- Preserved the existing Sunday School structure, navigation, responsive layout, and overall visual design.
+- Cleaned the supplied logo background for transparent use in the app.
